@@ -83,12 +83,25 @@
                     android:ems="6"
                     style="@style/edit"/>
             <EditText
+                    android:id="@+id/brand_car_edit"
+                    android:inputType="textPersonName"
+                    android:hint="@string/brand_car"
+                    android:text="@string/brand_car_value_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginTop="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    android:ems="10"
+                    style="@style/edit"/>
+            <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
-                    android:text="@string/brand_car_value_text"
-                    android:ems="10"
-                    android:id="@+id/brand_car_edit" android:hint="@string/brand_car" style="@style/edit"
+                    android:text="@string/name_owner_value_text"
+                    android:ems="16"
+                    android:id="@+id/name_owner_edit" android:hint="@string/name_owner" style="@style/edit"
                     android:layout_marginStart="@dimen/margin_layout" android:layout_marginTop="@dimen/margin_layout"
                     android:layout_marginEnd="@dimen/margin_layout" android:layout_marginBottom="@dimen/margin_layout"/>
         </LinearLayout>

@@ -6,4 +6,6 @@
     <string name="number_car_value_text"/>
     <string name="brand_car">กรุณาใส่ยี่ห้อรถ</string>
     <string name="brand_car_value_text"/>
+    <string name="name_owner_value_text"/>
+    <string name="name_owner">กรุณาใส่ชื่อผู้ขับ</string>
 </resources>
