@@ -15,4 +15,6 @@
     <string name="number_car_text"/>
     <string name="brand_text"/>
     <string name="name_text"/>
+    <string name="null_t">ว่าง</string>
+    <string name="unull_t">ไม่ว่าง</string>
 </resources>

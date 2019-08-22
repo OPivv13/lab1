@@ -197,28 +197,56 @@
                 style="@style/button"
                 android:visibility="gone"/>
     </LinearLayout>
-        <LinearLayout
+    <LinearLayout
             android:id="@+id/horizontal2_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             tools:context=".MainActivity">
 
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/null_color_text" android:layout_weight="1"/>
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/null_text" android:layout_weight="1"/>
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/unull_color_text" android:layout_weight="1"/>
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/unull_text" android:layout_weight="1"/>
-        </LinearLayout>
+        <TextView
+                android:id="@+id/null_color_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/slot_background"
+                android:layout_marginTop="@dimen/margin_layout"
+                android:layout_marginStart="@dimen/margin_layout"
+                android:layout_marginBottom="@dimen/margin_layout"
+                style="@style/edit"
+                android:visibility="visible"/>
+        <TextView
+                android:id="@+id/null_text"
+                android:text="@string/null_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/margin_layout"
+                android:layout_marginBottom="@dimen/margin_layout"
+                android:layout_marginEnd="@dimen/margin_layout"
+                style="@style/edit"
+                android:visibility="visible"/>
+        <TextView
+                android:id="@+id/unull_color_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/unull_background"
+                android:layout_marginTop="@dimen/margin_layout"
+                android:layout_marginStart="@dimen/margin_layout"
+                android:layout_marginBottom="@dimen/margin_layout"
+                style="@style/edit"
+                android:visibility="visible"/>
+        <TextView
+                android:id="@+id/unull_text"
+                android:text="@string/unull_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/margin_layout"
+                android:layout_marginEnd="@dimen/margin_layout"
+                android:layout_marginBottom="@dimen/margin_layout"
+                style="@style/edit"
+                android:visibility="visible"/>
+    </LinearLayout>
 </LinearLayout>
