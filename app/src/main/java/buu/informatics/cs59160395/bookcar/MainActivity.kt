@@ -1,194 +1,174 @@
 package buu.informatics.cs59160395.bookcar
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import buu.informatics.cs59160395.bookcar.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private val slot: Slot = Slot(0, "", "", "")
-    var sl: Int = 0
+    private lateinit var binding: ActivityMainBinding
+    var slotValue: Int = 0
+//    private val slot: Slot = Slot(slotValue, "", "", "")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        // click slot
-        findViewById<TextView>(R.id.slot_one_text).setOnClickListener {
-            showCreate(it, 1)
-        }
-        findViewById<TextView>(R.id.slot_two_text).setOnClickListener {
-            showCreate(it, 2)
-        }
-        findViewById<TextView>(R.id.slot_three_text).setOnClickListener {
-            showCreate(it, 3)
+        binding.apply {
+            // click slot
+            slotOneText.setOnClickListener {
+                showCreate(it, 1)
+            }
+            slotTwoText.setOnClickListener {
+                showCreate(it, 2)
+            }
+            slotThreeText.setOnClickListener {
+                showCreate(it, 3)
+            }
+            // click update
+            updateButton.setOnClickListener {
+                addCar(it, slotValue)
+            }
+            // click home
+            homeButton.setOnClickListener {
+                showHome(it)
+            }
+            // click edit
+            editButton.setOnClickListener {
+                showCreate(it, slotValue)
+            }
+            // click delete
+            deleteButton.setOnClickListener {
+                showHome(it)
+            }
+
+//            slot = this@MainActivity.slot
         }
 
-        // click update
-        findViewById<Button>(R.id.update_button).setOnClickListener {
-            addCar(it, sl)
-        }
-
-        // click home
-        findViewById<Button>(R.id.home_button).setOnClickListener {
-            showHome(it)
-        }
-
-        // click edit
-        findViewById<Button>(R.id.edit_button).setOnClickListener {
-            showCreate(it, sl)
-        }
-
-        // click delete
-        findViewById<Button>(R.id.delete_button).setOnClickListener {
-            showHome(it)
-        }
     }
 
     private fun addCar(view: View, num: Int){
-        val slot1 = findViewById<TextView>(R.id.slot_one_text)
-        val slot2 = findViewById<TextView>(R.id.slot_two_text)
-        val slot3 = findViewById<TextView>(R.id.slot_three_text)
-        val numberText = findViewById<TextView>(R.id.number_car_text)
-        val brandText = findViewById<TextView>(R.id.brand_car_text)
-        val nameText = findViewById<TextView>(R.id.name_owner_text)
-        val numberEdit = findViewById<EditText>(R.id.number_car_edit)
-        val brandEdit = findViewById<EditText>(R.id.brand_car_edit)
-        val nameEdit = findViewById<EditText>(R.id.name_owner_edit)
-        val updateBtn = findViewById<Button>(R.id.update_button)
-        val homeBtn = findViewById<Button>(R.id.home_button)
-        val editBtn = findViewById<Button>(R.id.edit_button)
-        val deleteBtn = findViewById<Button>(R.id.delete_button)
+        binding.apply {
+            // add slot num brand and name to data
+            // ????????????????
 
-        // hide editText and button
-        numberEdit.visibility = View.GONE
-        brandEdit.visibility = View.GONE
-        nameEdit.visibility = View.GONE
-        updateBtn.visibility = View.GONE
+            // hide editText and button
+            numberCarEdit.visibility = View.GONE
+            brandCarEdit.visibility = View.GONE
+            nameOwnerEdit.visibility = View.GONE
+            updateButton.visibility = View.GONE
 
-        // check slot and show slot
-        when (num) {
-            1 -> {
-                slot1.visibility = View.VISIBLE
-                slot2.visibility = View.GONE
-                slot3.visibility = View.GONE
+            // show textView and button
+            numberCarText.visibility = View.VISIBLE
+            brandCarText.visibility = View.VISIBLE
+            nameOwnerText.visibility = View.VISIBLE
+            homeButton.visibility = View.VISIBLE
+            editButton.visibility = View.VISIBLE
+            deleteButton.visibility = View.VISIBLE
+
+            // check slot and show slot
+            when (num) {
+                1 -> {
+                    slotOneText.visibility = View.VISIBLE
+                    slotTwoText.visibility = View.GONE
+                    slotThreeText.visibility = View.GONE
+                }
+                2 -> {
+                    slotOneText.visibility = View.GONE
+                    slotTwoText.visibility = View.VISIBLE
+                    slotThreeText.visibility = View.GONE
+                }
+                else -> {
+                    slotOneText.visibility = View.GONE
+                    slotTwoText.visibility = View.GONE
+                    slotThreeText.visibility = View.VISIBLE
+                }
             }
-            2 -> {
-                slot1.visibility = View.GONE
-                slot2.visibility = View.VISIBLE
-                slot3.visibility = View.GONE
-            }
-            else -> {
-                slot1.visibility = View.GONE
-                slot2.visibility = View.GONE
-                slot3.visibility = View.VISIBLE
-            }
+
+            invalidateAll()
+
+            // hide the keyboard
+            val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
         }
-
-        // show textView and button
-        numberText.visibility = View.VISIBLE
-        brandText.visibility = View.VISIBLE
-        nameText.visibility = View.VISIBLE
-        homeBtn.visibility = View.VISIBLE
-        editBtn.visibility = View.VISIBLE
-        deleteBtn.visibility = View.VISIBLE
-
     }
 
     private fun showCreate(view: View, num: Int){
-        val slot1 = findViewById<TextView>(R.id.slot_one_text)
-        val slot2 = findViewById<TextView>(R.id.slot_two_text)
-        val slot3 = findViewById<TextView>(R.id.slot_three_text)
-        val numberText = findViewById<TextView>(R.id.number_car_text)
-        val brandText = findViewById<TextView>(R.id.brand_car_text)
-        val nameText = findViewById<TextView>(R.id.name_owner_text)
-        val labelColor1 = findViewById<TextView>(R.id.null_color_text)
-        val label1 = findViewById<TextView>(R.id.null_text)
-        val labelColor2 = findViewById<TextView>(R.id.unull_color_text)
-        val label2 = findViewById<TextView>(R.id.unull_text)
-        val numberEdit = findViewById<EditText>(R.id.number_car_edit)
-        val brandEdit = findViewById<EditText>(R.id.brand_car_edit)
-        val nameEdit = findViewById<EditText>(R.id.name_owner_edit)
-        val updateBtn = findViewById<Button>(R.id.update_button)
-        val homeBtn = findViewById<Button>(R.id.home_button)
-        val editBtn = findViewById<Button>(R.id.edit_button)
-        val deleteBtn = findViewById<Button>(R.id.delete_button)
+        binding.apply {
+            // hide label textView and button
+            nullColorText.visibility = View.GONE
+            nullText.visibility = View.GONE
+            unullColorText.visibility = View.GONE
+            unullText.visibility = View.GONE
+            homeButton.visibility = View.GONE
+            editButton.visibility = View.GONE
+            deleteButton.visibility = View.GONE
+            numberCarText.visibility = View.GONE
+            brandCarText.visibility = View.GONE
+            nameOwnerText.visibility = View.GONE
 
-        // hide label textView and button
-        labelColor1.visibility = View.GONE
-        label1.visibility = View.GONE
-        labelColor2.visibility = View.GONE
-        label2.visibility = View.GONE
-        homeBtn.visibility = View.GONE
-        editBtn.visibility = View.GONE
-        deleteBtn.visibility = View.GONE
-        numberText.visibility = View.GONE
-        brandText.visibility = View.GONE
-        nameText.visibility = View.GONE
+            // show editText and button
+            updateButton.visibility = View.VISIBLE
+            numberCarEdit.visibility = View.VISIBLE
+            brandCarEdit.visibility = View.VISIBLE
+            nameOwnerEdit.visibility = View.VISIBLE
 
-        // show editText and button
-        updateBtn.visibility = View.VISIBLE
-        numberEdit.visibility = View.VISIBLE
-        brandEdit.visibility = View.VISIBLE
-        nameEdit.visibility = View.VISIBLE
+            // keep num slot
+            slotValue = num
 
-        // keep num slot
-        sl = num
-
-        // check slot and show slot
-        when (num) {
-            1 -> {
-                slot1.visibility = View.VISIBLE
-                slot2.visibility = View.GONE
-                slot3.visibility = View.GONE
+            // check slot and show slot
+            when (num) {
+                1 -> {
+                    slotOneText.visibility = View.VISIBLE
+                    slotTwoText.visibility = View.GONE
+                    slotThreeText.visibility = View.GONE
+                }
+                2 -> {
+                    slotOneText.visibility = View.GONE
+                    slotTwoText.visibility = View.VISIBLE
+                    slotThreeText.visibility = View.GONE
+                }
+                3 -> {
+                    slotOneText.visibility = View.GONE
+                    slotTwoText.visibility = View.GONE
+                    slotThreeText.visibility = View.VISIBLE
+                }
             }
-            2 -> {
-                slot1.visibility = View.GONE
-                slot2.visibility = View.VISIBLE
-                slot3.visibility = View.GONE
-            }
-            else -> {
-                slot1.visibility = View.GONE
-                slot2.visibility = View.GONE
-                slot3.visibility = View.VISIBLE
-            }
+
+            numberCarEdit.requestFocus()
+            // show the keyboard
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.showSoftInput(numberCarEdit, 0)
         }
-
     }
 
     private fun showHome(view: View){
-        val slot1 = findViewById<TextView>(R.id.slot_one_text)
-        val slot2 = findViewById<TextView>(R.id.slot_two_text)
-        val slot3 = findViewById<TextView>(R.id.slot_three_text)
-        val numberText = findViewById<TextView>(R.id.number_car_text)
-        val brandText = findViewById<TextView>(R.id.brand_car_text)
-        val nameText = findViewById<TextView>(R.id.name_owner_text)
-        val labelColor1 = findViewById<TextView>(R.id.null_color_text)
-        val label1 = findViewById<TextView>(R.id.null_text)
-        val labelColor2 = findViewById<TextView>(R.id.unull_color_text)
-        val label2 = findViewById<TextView>(R.id.unull_text)
-        val homeBtn = findViewById<Button>(R.id.home_button)
-        val editBtn = findViewById<Button>(R.id.edit_button)
-        val deleteBtn = findViewById<Button>(R.id.delete_button)
+        binding.apply {
+            // show slot and label
+            slotOneText.visibility = View.VISIBLE
+            slotTwoText.visibility = View.VISIBLE
+            slotThreeText.visibility = View.VISIBLE
+            nullColorText.visibility = View.VISIBLE
+            nullText.visibility = View.VISIBLE
+            unullColorText.visibility = View.VISIBLE
+            unullText.visibility = View.VISIBLE
 
-        // show slot and label
-        slot1.visibility = View.VISIBLE
-        slot2.visibility = View.VISIBLE
-        slot3.visibility = View.VISIBLE
-        labelColor1.visibility = View.VISIBLE
-        label1.visibility = View.VISIBLE
-        labelColor2.visibility = View.VISIBLE
-        label2.visibility = View.VISIBLE
+            // hide button and textView
+            homeButton.visibility = View.GONE
+            editButton.visibility = View.GONE
+            deleteButton.visibility = View.GONE
+            numberCarText.visibility = View.GONE
+            brandCarText.visibility = View.GONE
+            nameOwnerText.visibility = View.GONE
 
-        // hide button and textView
-        homeBtn.visibility = View.GONE
-        editBtn.visibility = View.GONE
-        deleteBtn.visibility = View.GONE
-        numberText.visibility = View.GONE
-        brandText.visibility = View.GONE
-        nameText.visibility = View.GONE
+        }
+
 
     }
 }

@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="slot" type="buu.informatics.cs59160395.bookcar.Slot"/>
+    </data>
 
     <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/linear_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            tools:context=".MainActivity" android:id="@+id/linear_layout">
+            tools:context=".MainActivity">
+
         <TextView
                 android:id="@+id/heading_text"
                 android:text="@string/head_text"
@@ -33,6 +40,7 @@
             <TextView
                     android:id="@+id/slot_one_text"
                     android:text="@string/slot_value_text"
+                    android:hint="@string/box1"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/slot_height"
                     android:layout_marginStart="@dimen/margin_layout"
@@ -44,6 +52,7 @@
             <TextView
                     android:id="@+id/slot_two_text"
                     android:text="@string/slot_value_text"
+                    android:hint="@string/box2"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/slot_height"
                     android:layout_weight="1"
@@ -56,6 +65,7 @@
             <TextView
                     android:id="@+id/slot_three_text"
                     android:text="@string/slot_value_text"
+                    android:hint="@string/box3"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/slot_height"
                     android:layout_weight="1"
@@ -66,191 +76,192 @@
                     style="@style/slot" />
         </LinearLayout>
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:context=".MainActivity" android:id="@+id/vertical_layout">
-        <EditText
-                android:id="@+id/number_car_edit"
-                android:inputType="textPersonName"
-                android:text="@string/number_car_value_text"
-                android:hint="@string/number_car"
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_top_button_layout"
-                android:layout_marginStart="@dimen/margin_layout"
-                android:layout_marginEnd="@dimen/margin_layout"
-                android:layout_marginBottom="@dimen/margin_layout"
-                android:ems="6"
-                style="@style/edit"
-                android:visibility="gone"/>
-        <EditText
-                android:id="@+id/brand_car_edit"
-                android:inputType="textPersonName"
-                android:hint="@string/brand_car"
-                android:text="@string/brand_car_value_text"
+                android:orientation="vertical"
+                tools:context=".MainActivity" android:id="@+id/vertical_layout">
+            <EditText
+                    android:id="@+id/number_car_edit"
+                    android:inputType="textPersonName"
+                    android:text="@string/number_car_value_text"
+                    android:hint="@string/number_car"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_top_button_layout"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    android:ems="6"
+                    style="@style/edit"
+                    android:visibility="gone"/>
+            <EditText
+                    android:id="@+id/brand_car_edit"
+                    android:inputType="textPersonName"
+                    android:hint="@string/brand_car"
+                    android:text="@string/brand_car_value_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginTop="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    android:ems="10"
+                    style="@style/edit"
+                    android:visibility="gone"/>
+            <EditText
+                    android:id="@+id/name_owner_edit"
+                    android:hint="@string/name_owner"
+                    android:inputType="textPersonName"
+                    android:text="@string/name_owner_value_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginTop="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    android:ems="16"
+                    style="@style/edit"
+                    android:visibility="gone"/>
+            <TextView
+                    android:id="@+id/number_car_text"
+                    android:text="@={slot.numberCar}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginTop="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    style="@style/edit"
+                    android:visibility="gone"/>
+            <TextView
+                    android:id="@+id/brand_car_text"
+                    android:text="@={slot.brandCar}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_layout"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    style="@style/edit"
+                    android:visibility="gone"/>
+            <TextView
+                    android:id="@+id/name_owner_text"
+                    android:text="@={slot.nameOwner}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_layout"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    style="@style/edit"
+                    android:visibility="gone"/>
+            <Button
+                    android:id="@+id/update_button"
+                    android:text="@string/update_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginTop="@dimen/margin_top_button_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    android:background="@color/button_background"
+                    android:textColor="@color/button_delete"
+                    style="@style/button"
+                    android:visibility="gone"/>
+            <Button
+                    android:id="@+id/home_button"
+                    android:text="@string/home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_bottom_button_layout"
+                    android:layout_marginBottom="@dimen/margin_bottom_button_layout"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:background="@color/button_background"
+                    android:textColor="@color/button_home"
+                    style="@style/button"
+                    android:visibility="gone"/>
+            <Button
+                    android:id="@+id/edit_button"
+                    android:text="@string/edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_bottom_button_layout"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_bottom_button_layout"
+                    android:background="@color/button_home"
+                    android:textColor="@color/button_background"
+                    style="@style/button"
+                    android:visibility="gone"/>
+            <Button
+                    android:id="@+id/delete_button"
+                    android:text="@string/delete_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_bottom_button_layout"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    android:background="@color/button_delete"
+                    android:textColor="@color/button_background"
+                    style="@style/button"
+                    android:visibility="gone"/>
+        </LinearLayout>
+        <LinearLayout
+                android:id="@+id/horizontal2_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_layout"
-                android:layout_marginTop="@dimen/margin_layout"
-                android:layout_marginEnd="@dimen/margin_layout"
-                android:layout_marginBottom="@dimen/margin_layout"
-                android:ems="10"
-                style="@style/edit"
-                android:visibility="gone"/>
-        <EditText
-                android:id="@+id/name_owner_edit"
-                android:hint="@string/name_owner"
-                android:inputType="textPersonName"
-                android:text="@string/name_owner_value_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_layout"
-                android:layout_marginTop="@dimen/margin_layout"
-                android:layout_marginEnd="@dimen/margin_layout"
-                android:layout_marginBottom="@dimen/margin_layout"
-                android:ems="16"
-                style="@style/edit"
-                android:visibility="gone"/>
-        <TextView
-                android:id="@+id/number_car_text"
-                android:text="@string/number_car_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_layout"
-                android:layout_marginEnd="@dimen/margin_layout"
-                android:layout_marginTop="@dimen/margin_layout"
-                android:layout_marginBottom="@dimen/margin_layout"
-                style="@style/edit"
-                android:visibility="gone"/>
-        <TextView
-                android:id="@+id/brand_car_text"
-                android:text="@string/brand_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_layout"
-                android:layout_marginStart="@dimen/margin_layout"
-                android:layout_marginEnd="@dimen/margin_layout"
-                android:layout_marginBottom="@dimen/margin_layout"
-                style="@style/edit"
-                android:visibility="gone"/>
-        <TextView
-                android:id="@+id/name_owner_text"
-                android:text="@string/name_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_layout"
-                android:layout_marginStart="@dimen/margin_layout"
-                android:layout_marginEnd="@dimen/margin_layout"
-                android:layout_marginBottom="@dimen/margin_layout"
-                style="@style/edit"
-                android:visibility="gone"/>
-        <Button
-                android:id="@+id/update_button"
-                android:text="@string/update_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_layout"
-                android:layout_marginTop="@dimen/margin_top_button_layout"
-                android:layout_marginEnd="@dimen/margin_layout"
-                android:layout_marginBottom="@dimen/margin_layout"
-                android:background="@color/button_background"
-                android:textColor="@color/button_delete"
-                style="@style/button"
-                android:visibility="gone"/>
-        <Button
-                android:id="@+id/home_button"
-                android:text="@string/home"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_bottom_button_layout"
-                android:layout_marginBottom="@dimen/margin_bottom_button_layout"
-                android:layout_marginStart="@dimen/margin_layout"
-                android:layout_marginEnd="@dimen/margin_layout"
-                android:background="@color/button_background"
-                android:textColor="@color/button_home"
-                style="@style/button"
-                android:visibility="gone"/>
-        <Button
-                android:id="@+id/edit_button"
-                android:text="@string/edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_bottom_button_layout"
-                android:layout_marginStart="@dimen/margin_layout"
-                android:layout_marginEnd="@dimen/margin_layout"
-                android:layout_marginBottom="@dimen/margin_bottom_button_layout"
-                android:background="@color/button_home"
-                android:textColor="@color/button_background"
-                style="@style/button"
-                android:visibility="gone"/>
-        <Button
-                android:id="@+id/delete_button"
-                android:text="@string/delete_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_bottom_button_layout"
-                android:layout_marginStart="@dimen/margin_layout"
-                android:layout_marginEnd="@dimen/margin_layout"
-                android:layout_marginBottom="@dimen/margin_layout"
-                android:background="@color/button_delete"
-                android:textColor="@color/button_background"
-                style="@style/button"
-                android:visibility="gone"/>
-    </LinearLayout>
-    <LinearLayout
-            android:id="@+id/horizontal2_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            tools:context=".MainActivity">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                tools:context=".MainActivity">
 
-        <TextView
-                android:id="@+id/null_color_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/slot_background"
-                android:layout_marginTop="@dimen/margin_layout"
-                android:layout_marginStart="@dimen/margin_layout"
-                android:layout_marginBottom="@dimen/margin_layout"
-                android:layout_marginEnd="@dimen/margin_bottom_button_layout"
-                style="@style/label"
-                android:visibility="visible"/>
-        <TextView
-                android:id="@+id/null_text"
-                android:text="@string/null_t"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginTop="@dimen/margin_layout"
-                android:layout_marginBottom="@dimen/margin_layout"
-                android:layout_marginEnd="@dimen/margin_layout"
-                style="@style/label"
-                android:visibility="visible"/>
-        <TextView
-                android:id="@+id/unull_color_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/unull_background"
-                android:layout_marginTop="@dimen/margin_layout"
-                android:layout_marginStart="@dimen/margin_layout"
-                android:layout_marginBottom="@dimen/margin_layout"
-                android:layout_marginEnd="@dimen/margin_bottom_button_layout"
-                style="@style/label"
-                android:visibility="visible"/>
-        <TextView
-                android:id="@+id/unull_text"
-                android:text="@string/unull_t"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginTop="@dimen/margin_layout"
-                android:layout_marginEnd="@dimen/margin_layout"
-                android:layout_marginBottom="@dimen/margin_layout"
-                style="@style/label"
-                android:visibility="visible"/>
+            <TextView
+                    android:id="@+id/null_color_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/slot_background"
+                    android:layout_marginTop="@dimen/margin_layout"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_bottom_button_layout"
+                    style="@style/label"
+                    android:visibility="visible"/>
+            <TextView
+                    android:id="@+id/null_text"
+                    android:text="@string/null_t"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    style="@style/label"
+                    android:visibility="visible"/>
+            <TextView
+                    android:id="@+id/unull_color_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/unull_background"
+                    android:layout_marginTop="@dimen/margin_layout"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_bottom_button_layout"
+                    style="@style/label"
+                    android:visibility="visible"/>
+            <TextView
+                    android:id="@+id/unull_text"
+                    android:text="@string/unull_t"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    style="@style/label"
+                    android:visibility="visible"/>
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</layout>

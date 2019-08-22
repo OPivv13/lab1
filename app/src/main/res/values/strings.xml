@@ -17,4 +17,7 @@
     <string name="name_text"/>
     <string name="null_t">ว่าง</string>
     <string name="unull_t">ไม่ว่าง</string>
+    <string name="box1">01</string>
+    <string name="box2">02</string>
+    <string name="box3">03</string>
 </resources>

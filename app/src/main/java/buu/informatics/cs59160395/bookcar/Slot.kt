@@ -1,3 +1,3 @@
 package buu.informatics.cs59160395.bookcar
 
-data class Slot (var i: Int, var number: String, var brand: String, var name: String)
+data class Slot (var i: Int, var numberCar: String, var brandCar: String, var nameOwner: String)
