@@ -38,6 +38,7 @@
                     android:layout_marginStart="@dimen/margin_layout"
                     android:layout_marginTop="@dimen/margin_layout"
                     android:layout_marginBottom="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
                     android:layout_weight="1"
                     style="@style/slot"/>
             <TextView
@@ -58,6 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/slot_height"
                     android:layout_weight="1"
+                    android:layout_marginStart="@dimen/margin_layout"
                     android:layout_marginTop="@dimen/margin_layout"
                     android:layout_marginBottom="@dimen/margin_layout"
                     android:layout_marginEnd="@dimen/margin_layout"
