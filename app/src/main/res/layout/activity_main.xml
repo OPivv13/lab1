@@ -14,14 +14,14 @@
                 android:text="@string/head_text"
                 android:textAlignment="center"
                 android:textSize="@dimen/heading_size"
-                android:textColor="@color/dark_colors"
+                android:textColor="@color/button_delete"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/heading_height"
                 android:layout_marginTop="@dimen/margin_layout"
                 android:layout_marginEnd="@dimen/margin_layout"
                 android:layout_marginBottom="@dimen/margin_layout"
                 android:layout_marginStart="@dimen/margin_layout"
-                android:background="@drawable/heading_background"
+                android:background="@color/heading_background"
                 android:fontFamily="@font/roboto"/>
 
         <LinearLayout
@@ -96,28 +96,41 @@
                     android:ems="10"
                     style="@style/edit"/>
             <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/name_owner_edit"
+                    android:hint="@string/name_owner"
                     android:inputType="textPersonName"
                     android:text="@string/name_owner_value_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginTop="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
                     android:ems="16"
-                    android:id="@+id/name_owner_edit" android:hint="@string/name_owner" style="@style/edit"
-                    android:layout_marginStart="@dimen/margin_layout" android:layout_marginTop="@dimen/margin_layout"
-                    android:layout_marginEnd="@dimen/margin_layout" android:layout_marginBottom="@dimen/margin_layout"/>
+                    style="@style/edit"/>
             <Button
+                    android:id="@+id/update_button"
                     android:text="@string/update_text"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/update_button" style="@style/button"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_layout"
                     android:layout_marginTop="@dimen/margin_top_button_layout"
-                    android:layout_marginEnd="@dimen/margin_layout" android:layout_marginBottom="@dimen/margin_layout"
-                    android:background="@color/button_background" android:textColor="@color/button_delete"/>
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    android:background="@color/button_background"
+                    android:textColor="@color/button_delete"
+                    style="@style/button"/>
             <Button
+                    android:id="@+id/delete_button"
                     android:text="@string/delete_text"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/delete_button" style="@style/button"
-                    android:layout_marginTop="@dimen/margin_layout" android:layout_marginStart="@dimen/margin_layout"
-                    android:layout_marginEnd="@dimen/margin_layout" android:layout_marginBottom="@dimen/margin_layout"
-                    android:background="@color/button_delete" android:textColor="@color/button_background"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_bottom_button_layout"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout"
+                    android:layout_marginBottom="@dimen/margin_layout"
+                    android:background="@color/button_delete"
+                    android:textColor="@color/button_background"
+                    style="@style/button"/>
         </LinearLayout>
     </LinearLayout>
