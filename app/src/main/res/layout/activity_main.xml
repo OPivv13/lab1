@@ -213,7 +213,8 @@
                 android:layout_marginTop="@dimen/margin_layout"
                 android:layout_marginStart="@dimen/margin_layout"
                 android:layout_marginBottom="@dimen/margin_layout"
-                style="@style/edit"
+                android:layout_marginEnd="@dimen/margin_bottom_button_layout"
+                style="@style/label"
                 android:visibility="visible"/>
         <TextView
                 android:id="@+id/null_text"
@@ -224,7 +225,7 @@
                 android:layout_marginTop="@dimen/margin_layout"
                 android:layout_marginBottom="@dimen/margin_layout"
                 android:layout_marginEnd="@dimen/margin_layout"
-                style="@style/edit"
+                style="@style/label"
                 android:visibility="visible"/>
         <TextView
                 android:id="@+id/unull_color_text"
@@ -235,7 +236,8 @@
                 android:layout_marginTop="@dimen/margin_layout"
                 android:layout_marginStart="@dimen/margin_layout"
                 android:layout_marginBottom="@dimen/margin_layout"
-                style="@style/edit"
+                android:layout_marginEnd="@dimen/margin_bottom_button_layout"
+                style="@style/label"
                 android:visibility="visible"/>
         <TextView
                 android:id="@+id/unull_text"
@@ -246,7 +248,7 @@
                 android:layout_marginTop="@dimen/margin_layout"
                 android:layout_marginEnd="@dimen/margin_layout"
                 android:layout_marginBottom="@dimen/margin_layout"
-                style="@style/edit"
+                style="@style/label"
                 android:visibility="visible"/>
     </LinearLayout>
 </LinearLayout>
