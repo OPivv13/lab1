@@ -76,7 +76,7 @@
                     android:hint="@string/number_car"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_layout"
+                    android:layout_marginTop="@dimen/margin_top_button_layout"
                     android:layout_marginStart="@dimen/margin_layout"
                     android:layout_marginEnd="@dimen/margin_layout"
                     android:layout_marginBottom="@dimen/margin_layout"
@@ -104,5 +104,20 @@
                     android:id="@+id/name_owner_edit" android:hint="@string/name_owner" style="@style/edit"
                     android:layout_marginStart="@dimen/margin_layout" android:layout_marginTop="@dimen/margin_layout"
                     android:layout_marginEnd="@dimen/margin_layout" android:layout_marginBottom="@dimen/margin_layout"/>
+            <Button
+                    android:text="@string/update_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/update_button" style="@style/button"
+                    android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginTop="@dimen/margin_top_button_layout"
+                    android:layout_marginEnd="@dimen/margin_layout" android:layout_marginBottom="@dimen/margin_layout"
+                    android:background="@color/button_background" android:textColor="@color/button_delete"/>
+            <Button
+                    android:text="@string/delete_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/delete_button" style="@style/button"
+                    android:layout_marginTop="@dimen/margin_layout" android:layout_marginStart="@dimen/margin_layout"
+                    android:layout_marginEnd="@dimen/margin_layout" android:layout_marginBottom="@dimen/margin_layout"
+                    android:background="@color/button_delete" android:textColor="@color/button_background"/>
         </LinearLayout>
     </LinearLayout>

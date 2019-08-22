@@ -8,4 +8,6 @@
     <string name="brand_car_value_text"/>
     <string name="name_owner_value_text"/>
     <string name="name_owner">กรุณาใส่ชื่อผู้ขับ</string>
+    <string name="update_text">Update</string>
+    <string name="delete_text">Delete</string>
 </resources>

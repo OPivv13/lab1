@@ -5,4 +5,5 @@
     <dimen name="margin_layout">16dp</dimen>
     <dimen name="size_text">18dp</dimen>
     <dimen name="slot_height">90dp</dimen>
+    <dimen name="margin_top_button_layout">60dp</dimen>
 </resources>
