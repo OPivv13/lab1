@@ -4,4 +4,6 @@
     <string name="slot_value_text"/>
     <string name="number_car">กรุณาใส่เลขทะเบียนรถ</string>
     <string name="number_car_value_text"/>
+    <string name="brand_car">กรุณาใส่ยี่ห้อรถ</string>
+    <string name="brand_car_value_text"/>
 </resources>

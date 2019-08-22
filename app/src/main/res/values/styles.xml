@@ -11,8 +11,6 @@
     <style name="slot">
         <item name="android:background">@color/slot_background</item>
         <item name="android:layout_height">@dimen/slot_height</item>
-        <item name="android:layout_marginTop">@dimen/margin_layout</item>
-        <item name="android:layout_marginBottom">@dimen/margin_layout</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">@dimen/size_text</item>
         <item name="android:textStyle">bold</item>
