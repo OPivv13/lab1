@@ -2,4 +2,6 @@
     <string name="app_name">bookCar</string>
     <string name="head_text">บริการเช่าที่จอดรถ</string>
     <string name="slot_value_text"/>
+    <string name="number_car">กรุณาใส่เลขทะเบียนรถ</string>
+    <string name="number_car_value_text"/>
 </resources>
