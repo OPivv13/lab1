@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
         binding.apply {
             // click slot
             slotOneText.setOnClickListener {
@@ -60,7 +59,6 @@ class MainActivity : AppCompatActivity() {
             slot = this@MainActivity.slot3
             slot = this@MainActivity.slot0
         }
-
     }
 
     private fun checkSlot(view: View){
@@ -117,7 +115,7 @@ class MainActivity : AppCompatActivity() {
                     slotOneText.visibility = View.VISIBLE
                     slotTwoText.visibility = View.GONE
                     slotThreeText.visibility = View.GONE
-
+                    slotOneText.text = slot1.numberCar
                     numberCarText.text = slot1.numberCar
                     brandCarText.text = slot1.brandCar
                     nameOwnerText.text = slot1.nameOwner
@@ -126,7 +124,7 @@ class MainActivity : AppCompatActivity() {
                     slotOneText.visibility = View.GONE
                     slotTwoText.visibility = View.VISIBLE
                     slotThreeText.visibility = View.GONE
-
+                    slotTwoText.text = slot2.numberCar
                     numberCarText.text = slot2.numberCar
                     brandCarText.text = slot2.brandCar
                     nameOwnerText.text = slot2.nameOwner
@@ -135,7 +133,7 @@ class MainActivity : AppCompatActivity() {
                     slotOneText.visibility = View.GONE
                     slotTwoText.visibility = View.GONE
                     slotThreeText.visibility = View.VISIBLE
-
+                    slotThreeText.text = slot3.numberCar
                     numberCarText.text = slot3.numberCar
                     brandCarText.text = slot3.brandCar
                     nameOwnerText.text = slot3.nameOwner
@@ -168,23 +166,18 @@ class MainActivity : AppCompatActivity() {
                     slot1.numberCar = numberCarEdit.text.toString()
                     slot1.brandCar = brandCarEdit.text.toString()
                     slot1.nameOwner = nameOwnerEdit.text.toString()
-//                    slot = this@MainActivity.slot1
-
                 }
                 2 -> {
                     // add slot num brand and name to data
                     slot2.numberCar = numberCarEdit.text.toString()
                     slot2.brandCar = brandCarEdit.text.toString()
                     slot2.nameOwner = nameOwnerEdit.text.toString()
-//                    slot = this@MainActivity.slot2
-
                 }
                 3 -> {
                     // add slot num brand and name to data
                     slot3.numberCar = numberCarEdit.text.toString()
                     slot3.brandCar = brandCarEdit.text.toString()
                     slot3.nameOwner = nameOwnerEdit.text.toString()
-//                    slot = this@MainActivity.slot3
                 }
             }
 
@@ -204,6 +197,7 @@ class MainActivity : AppCompatActivity() {
                 brandCarEdit.text.clear()
                 nameOwnerEdit.text.clear()
             }
+
             // hide label textView and button
             nullColorText.visibility = View.GONE
             nullText.visibility = View.GONE
@@ -228,25 +222,21 @@ class MainActivity : AppCompatActivity() {
                     slotOneText.visibility = View.VISIBLE
                     slotTwoText.visibility = View.GONE
                     slotThreeText.visibility = View.GONE
-
                 }
                 2 -> {
                     slotOneText.visibility = View.GONE
                     slotTwoText.visibility = View.VISIBLE
                     slotThreeText.visibility = View.GONE
-
-
                 }
                 3 -> {
                     slotOneText.visibility = View.GONE
                     slotTwoText.visibility = View.GONE
                     slotThreeText.visibility = View.VISIBLE
-
-
                 }
             }
 
             invalidateAll()
+
             numberCarEdit.requestFocus()
             // show the keyboard
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -256,6 +246,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun showHome(view: View){
         binding.apply {
+            // show number on slot
+//            if(slot1.numberCar != null){
+//                slotOneText.text = "55555"
+//            }
+//            if(slot2.numberCar != null){
+//                slotTwoText.text = "2222"
+//            }
+//            if(slot3.numberCar != null){
+//                slotTwoText.text = "000"
+//            }
 
             // show slot and label
             slotOneText.visibility = View.VISIBLE
@@ -274,6 +274,7 @@ class MainActivity : AppCompatActivity() {
             brandCarText.visibility = View.GONE
             nameOwnerText.visibility = View.GONE
 
+            invalidateAll()
         }
 
 
