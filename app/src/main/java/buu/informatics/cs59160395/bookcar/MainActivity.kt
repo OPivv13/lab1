@@ -240,6 +240,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+
             invalidateAll()
 
             numberCarEdit.requestFocus()
