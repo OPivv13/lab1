@@ -1,6 +1,8 @@
 package buu.informatics.cs59160395.bookcar
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.DialogInterface
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +11,8 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import buu.informatics.cs59160395.bookcar.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -145,6 +149,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("ResourceAsColor")
     private fun addSlot(view: View){
         binding.apply {
             // hide editText and button
@@ -152,6 +157,10 @@ class MainActivity : AppCompatActivity() {
             brandCarEdit.visibility = View.GONE
             nameOwnerEdit.visibility = View.GONE
             updateButton.visibility = View.GONE
+
+            // color buttom Home
+            homeButton.setBackgroundResource(R.color.button_background)
+            homeButton.setTextColor(R.color.button_home)
 
             // show textView and button
             numberCarText.visibility = View.VISIBLE
@@ -164,11 +173,12 @@ class MainActivity : AppCompatActivity() {
             // add slot
             when (slotValue) {
                 1 -> {
-                    // add slot num brand and name to data  &  set text slot
+                    // add slot num brand and name to data  &  set text slot  &  color slot
                     slot1.numberCar = numberCarEdit.text.toString()
                     slot1.brandCar = brandCarEdit.text.toString()
                     slot1.nameOwner = nameOwnerEdit.text.toString()
                     slotOneText.text = numberCarEdit.text.toString()
+                    slotOneText.setBackgroundResource(R.color.unull_background)
                 }
                 2 -> {
                     // add slot num brand and name to data  &  set text slot
@@ -176,6 +186,7 @@ class MainActivity : AppCompatActivity() {
                     slot2.brandCar = brandCarEdit.text.toString()
                     slot2.nameOwner = nameOwnerEdit.text.toString()
                     slotTwoText.text = numberCarEdit.text.toString()
+                    slotTwoText.setBackgroundResource(R.color.unull_background)
                 }
                 3 -> {
                     // add slot num brand and name to data  &  set text slot
@@ -183,6 +194,7 @@ class MainActivity : AppCompatActivity() {
                     slot3.brandCar = brandCarEdit.text.toString()
                     slot3.nameOwner = nameOwnerEdit.text.toString()
                     slotThreeText.text = numberCarEdit.text.toString()
+                    slotThreeText.setBackgroundResource(R.color.unull_background)
                 }
             }
 
@@ -194,7 +206,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showEdit(view: View, checkNull: Boolean){
+    @SuppressLint("ResourceAsColor")
+    private fun showEdit(view: View, checkNull: Boolean) {
         binding.apply {
             if(checkNull == true){
                 // clean editText
@@ -213,6 +226,10 @@ class MainActivity : AppCompatActivity() {
             numberCarText.visibility = View.GONE
             brandCarText.visibility = View.GONE
             nameOwnerText.visibility = View.GONE
+
+            // color buttom Home
+            homeButton.setBackgroundResource(R.color.button_home)
+            homeButton.setTextColor(R.color.button_background)
 
             // show editText and button
             updateButton.visibility = View.VISIBLE
@@ -240,7 +257,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-
             invalidateAll()
 
             numberCarEdit.requestFocus()
@@ -250,8 +266,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showHome(view: View){
-        binding.apply {
+    private fun colorSlot(){
+        binding.apply{
             // check color and show color
             if(slot1.numberCar != ""){
                 slotOneText.setBackgroundResource(R.color.unull_background)
@@ -271,6 +287,18 @@ class MainActivity : AppCompatActivity() {
             if(slot3.numberCar == "" ) {
                 slotThreeText.setBackgroundResource(R.color.slot_background)
             }
+        }
+    }
+
+    @SuppressLint("ResourceAsColor")
+    private fun showHome(view: View){
+        binding.apply {
+            // check color and show color
+            colorSlot()
+
+            // color buttom Home
+            homeButton.setBackgroundResource(R.color.button_background)
+            homeButton.setTextColor(R.color.button_home)
 
             // show slot and label
             slotOneText.visibility = View.VISIBLE

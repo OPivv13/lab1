@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+            android:text="@string/alert_value_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/alert_text" android:textStyle="bold"
+            android:textSize="24sp" android:textAlignment="center" android:textColor="@color/dark_colors"
+            android:layout_alignParentEnd="true" android:layout_marginEnd="57dp" android:layout_alignParentStart="true"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="54dp" android:layout_alignParentTop="true"/>
+    <Button
+            android:text="@android:string/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/alert_button" android:layout_alignParentEnd="true"
+            android:layout_marginEnd="157dp" android:layout_alignParentBottom="true"
+            android:layout_marginBottom="544dp" android:layout_alignParentStart="true"
+            android:layout_marginStart="166dp" android:layout_marginTop="54dp" android:layout_below="@+id/alert_text"
+            android:textAlignment="center" android:textSize="18sp" android:textStyle="bold"
+            android:textColor="@color/button_background" android:background="@color/button_home"/>
+</RelativeLayout>
