@@ -39,7 +39,7 @@
                 tools:context=".MainActivity">
             <TextView
                     android:id="@+id/slot_one_text"
-                    android:text="@string/number_car_text"
+                    android:text="@string/number_text"
                     android:hint="@string/box1"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/slot_height"

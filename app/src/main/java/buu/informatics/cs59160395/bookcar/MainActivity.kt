@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private var slot2: Slot = Slot(2, "", "", "")
     private var slot3: Slot = Slot(3, "", "", "")
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -163,22 +164,25 @@ class MainActivity : AppCompatActivity() {
             // add slot
             when (slotValue) {
                 1 -> {
-                    // add slot num brand and name to data
+                    // add slot num brand and name to data  &  set text slot
                     slot1.numberCar = numberCarEdit.text.toString()
                     slot1.brandCar = brandCarEdit.text.toString()
                     slot1.nameOwner = nameOwnerEdit.text.toString()
+                    slotOneText.text = numberCarEdit.text.toString()
                 }
                 2 -> {
-                    // add slot num brand and name to data
+                    // add slot num brand and name to data  &  set text slot
                     slot2.numberCar = numberCarEdit.text.toString()
                     slot2.brandCar = brandCarEdit.text.toString()
                     slot2.nameOwner = nameOwnerEdit.text.toString()
+                    slotTwoText.text = numberCarEdit.text.toString()
                 }
                 3 -> {
-                    // add slot num brand and name to data
+                    // add slot num brand and name to data  &  set text slot
                     slot3.numberCar = numberCarEdit.text.toString()
                     slot3.brandCar = brandCarEdit.text.toString()
                     slot3.nameOwner = nameOwnerEdit.text.toString()
+                    slotThreeText.text = numberCarEdit.text.toString()
                 }
             }
 
@@ -302,16 +306,19 @@ class MainActivity : AppCompatActivity() {
                     slot1.numberCar = ""
                     slot1.brandCar = ""
                     slot1.nameOwner = ""
+                    slotOneText.text = ""
                 }
                 2 -> {
                     slot2.numberCar = ""
                     slot2.brandCar = ""
                     slot2.nameOwner = ""
+                    slotTwoText.text = ""
                 }
                 3 -> {
                     slot3.numberCar = ""
                     slot3.brandCar = ""
                     slot3.nameOwner = ""
+                    slotThreeText.text = ""
                 }
             }
 
