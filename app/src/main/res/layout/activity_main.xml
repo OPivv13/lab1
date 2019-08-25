@@ -39,7 +39,7 @@
                 tools:context=".MainActivity">
             <TextView
                     android:id="@+id/slot_one_text"
-                    android:text="@string/box1"
+                    android:text="@string/number_car_text"
                     android:hint="@string/box1"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/slot_height"
@@ -48,10 +48,10 @@
                     android:layout_marginBottom="@dimen/margin_layout"
                     android:layout_marginEnd="@dimen/margin_layout"
                     android:layout_weight="1"
-                    style="@style/slot"/>
+                    style="@style/slot" android:background="@color/slot_background"/>
             <TextView
                     android:id="@+id/slot_two_text"
-                    android:text="@string/box2"
+                    android:text="@string/brand_text"
                     android:hint="@string/box2"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/slot_height"
@@ -64,7 +64,7 @@
                     style="@style/slot"/>
             <TextView
                     android:id="@+id/slot_three_text"
-                    android:text="@string/box3"
+                    android:text="@string/name_text"
                     android:hint="@string/box3"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/slot_height"
@@ -73,7 +73,7 @@
                     android:layout_marginTop="@dimen/margin_layout"
                     android:layout_marginBottom="@dimen/margin_layout"
                     android:layout_marginEnd="@dimen/margin_layout"
-                    style="@style/slot" />
+                    style="@style/slot" android:background="@color/slot_background"/>
         </LinearLayout>
 
         <LinearLayout

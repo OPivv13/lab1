@@ -1,6 +1,7 @@
 package buu.informatics.cs59160395.bookcar
 
 import android.content.Context
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -115,7 +116,7 @@ class MainActivity : AppCompatActivity() {
                     slotOneText.visibility = View.VISIBLE
                     slotTwoText.visibility = View.GONE
                     slotThreeText.visibility = View.GONE
-                    slotOneText.text = slot1.numberCar
+
                     numberCarText.text = slot1.numberCar
                     brandCarText.text = slot1.brandCar
                     nameOwnerText.text = slot1.nameOwner
@@ -124,7 +125,7 @@ class MainActivity : AppCompatActivity() {
                     slotOneText.visibility = View.GONE
                     slotTwoText.visibility = View.VISIBLE
                     slotThreeText.visibility = View.GONE
-                    slotTwoText.text = slot2.numberCar
+
                     numberCarText.text = slot2.numberCar
                     brandCarText.text = slot2.brandCar
                     nameOwnerText.text = slot2.nameOwner
@@ -133,7 +134,7 @@ class MainActivity : AppCompatActivity() {
                     slotOneText.visibility = View.GONE
                     slotTwoText.visibility = View.GONE
                     slotThreeText.visibility = View.VISIBLE
-                    slotThreeText.text = slot3.numberCar
+
                     numberCarText.text = slot3.numberCar
                     brandCarText.text = slot3.brandCar
                     nameOwnerText.text = slot3.nameOwner
@@ -203,7 +204,6 @@ class MainActivity : AppCompatActivity() {
             nullText.visibility = View.GONE
             unullColorText.visibility = View.GONE
             unullText.visibility = View.GONE
-            homeButton.visibility = View.GONE
             editButton.visibility = View.GONE
             deleteButton.visibility = View.GONE
             numberCarText.visibility = View.GONE
@@ -215,6 +215,7 @@ class MainActivity : AppCompatActivity() {
             numberCarEdit.visibility = View.VISIBLE
             brandCarEdit.visibility = View.VISIBLE
             nameOwnerEdit.visibility = View.VISIBLE
+            homeButton.visibility = View.VISIBLE
 
             // show slot and hide slot
             when (slotValue) {
@@ -246,16 +247,25 @@ class MainActivity : AppCompatActivity() {
 
     private fun showHome(view: View){
         binding.apply {
-            // show number on slot
-//            if(slot1.numberCar != null){
-//                slotOneText.text = "55555"
-//            }
-//            if(slot2.numberCar != null){
-//                slotTwoText.text = "2222"
-//            }
-//            if(slot3.numberCar != null){
-//                slotTwoText.text = "000"
-//            }
+            // check color and show color
+            if(slot1.numberCar != ""){
+                slotOneText.setBackgroundResource(R.color.unull_background)
+            }
+            if(slot1.numberCar == "" ) {
+                slotOneText.setBackgroundResource(R.color.slot_background)
+            }
+            if(slot2.numberCar != ""){
+                slotTwoText.setBackgroundResource(R.color.unull_background)
+            }
+            if(slot2.numberCar == "" ) {
+                slotTwoText.setBackgroundResource(R.color.slot_background)
+            }
+            if(slot3.numberCar != ""){
+                slotThreeText.setBackgroundResource(R.color.unull_background)
+            }
+            if(slot3.numberCar == "" ) {
+                slotThreeText.setBackgroundResource(R.color.slot_background)
+            }
 
             // show slot and label
             slotOneText.visibility = View.VISIBLE
@@ -273,6 +283,10 @@ class MainActivity : AppCompatActivity() {
             numberCarText.visibility = View.GONE
             brandCarText.visibility = View.GONE
             nameOwnerText.visibility = View.GONE
+            numberCarEdit.visibility = View.GONE
+            brandCarEdit.visibility = View.GONE
+            nameOwnerEdit.visibility = View.GONE
+            updateButton.visibility = View.GONE
 
             invalidateAll()
         }
